@@ -1,0 +1,60 @@
+<div class="container mt-4">
+    <link rel="stylesheet" href="article.component.css">
+    <h1 class="text-center">¿Por qué el cerro de Monserrate no es un volcán?</h1>
+    
+    <section class="introduction mt-3">
+      <p>
+        El cerro de Monserrate, ubicado en Bogotá, es conocido por su belleza natural y su importancia cultural, pero no es un volcán. 
+        Aquí te explicamos la historia geológica y los datos científicos que lo demuestran.
+      </p>
+    </section>
+  
+    <section class="formation mt-4">
+      <h2>Historia geológica</h2>
+      <p>
+        Monserrate está compuesto de rocas sedimentarias formadas hace aproximadamente 70 millones de años en el fondo de los mares cretácicos. 
+        Estas rocas se originaron por acumulación de fragmentos de rocas preexistentes, materia orgánica y minerales.
+      </p>
+    </section>
+  
+    <section class="why-not-volcano mt-4">
+      <h2>¿Por qué no es un volcán?</h2>
+      <ul>
+        <li>Las rocas volcánicas se forman por el enfriamiento de magma, un proceso que no ocurre en la Sabana de Bogotá.</li>
+        <li>La región no presenta evidencia de actividad magmática ni tectónica asociada a volcanes.</li>
+        <li>Las formaciones de Monserrate provienen de levantamiento tectónico de sedimentos marinos.</li>
+      </ul>
+    </section>
+  
+    <div class="container mt-4">
+        <h2>Trivia: ¡Pon a prueba tus conocimientos!</h2>
+      
+        <div *ngFor="let question of questions; let i = index" class="card mt-3">
+          <div class="card-body">
+            <h5 class="card-title">Pregunta {{ i + 1 }}</h5>
+            <p class="card-text">{{ question.question }}</p>
+      
+            <div *ngFor="let option of question.options; let j = index" class="form-check">
+              <input
+                type="radio"
+                [id]="'option-' + i + '-' + j"
+                [name]="'question-' + i"
+                (change)="checkAnswer(i, j)"
+                class="form-check-input"
+              />
+              <label [for]="'option-' + i + '-' + j" class="form-check-label">
+                {{ option }}
+              </label>
+            </div>
+      
+            <div *ngIf="selectedAnswers[i] !== undefined" class="mt-3">
+              <span [class.text-success]="isCorrect(i)" [class.text-danger]="!isCorrect(i)">
+                {{ isCorrect(i) ? '¡Correcto!' : 'Incorrecto, intenta de nuevo.' }}
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+  </div>
+  

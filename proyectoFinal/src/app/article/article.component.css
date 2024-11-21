@@ -1,0 +1,44 @@
+/* You can add global styles to this file, and also import other style files */
+h1 {
+    font-family: 'Georgia', serif;
+    color: #4a4a4a;
+  }
+  
+  h2 {
+    color: #2a9d8f;
+  }
+  
+  .container {
+    max-width: 800px;
+    margin: auto;
+  }
+  
+  p {
+    font-size: 1.1em;
+    line-height: 1.6;
+  }
+  
+  .card {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    
+  }
+  
+  .card-title {
+    font-size: 1.2em;
+    color: #2a9d8f;
+  }
+  
+  .form-check-label {
+    cursor: pointer;
+  }
+  
+  .text-success {
+    color: #28a745;
+  }
+  
+  .text-danger {
+    color: #dc3545;
+  }
+  
